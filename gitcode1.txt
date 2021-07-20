@@ -1,0 +1,21 @@
+package myntra;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class LoginMyntra {
+
+	public static void main(String[] args) throws Exception {
+		System.setProperty("webdriver.chrome.driver", "E:\\software\\chromedriver_win32\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.myntra.com/");
+		driver.manage().window().maximize();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//input[@placeholder='Search for products, brands and more']")).sendKeys("oppo phone");
+		driver.findElement(By.xpath("//li[normalize-space()='Oppo Phones']")).click();
+		driver.findElement(By.xpath("//span[@data-colorhex='blue']")).click();
+		
+	}
+
+}
